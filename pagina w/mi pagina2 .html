@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my page lis </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        /* Marco superior con título */
+        .header {
+            background-color: LightSkyBlue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Contenedor principal para menú y contenido */
+        .main-container {
+            display: flex;
+            flex: 1;
+            background-color:#2980b9;
+        }
+        
+        /* Marco del menú izquierdo */
+        .menu {
+            width: 250px;
+            background-color: SkyBlue;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .menu ul {
+            list-style-type: none;
+        }
+        
+        .menu li {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .menu li:hover {
+            background-color: LightBlue;
+        }
+        
+        .menu li.active {
+            background-color: #2980b9;
+        }
+        
+        /* Área de contenido principal */
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: LightBlue;
+            overflow-y: auto;
+        }
+        
+        /* Estilos para los diferentes contenidos */
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        /* Estilos para la tabla de notas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #2c3e50;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Estilos para la galería de imágenes */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Estilos para el video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Estilos para el juego */
+        
+        /* Estilos para el documento del manual técnico */
+        .document {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .document h3 {
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+        
+        .document p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Marco superior con título -->
+    <div class="header">
+        <h1>Pagina personal -Lis-</h1>
+    </div>
+    
+    <div class="main-container">
+        <!-- Marco del menú izquierdo -->
+        <div class="menu">
+            <ul>
+                <li class="active" onclick="showContent('inicio')">Inicio</li>
+                <li onclick="showContent('hoja-de-vida')">Hoja de vida</li>
+                <li onclick="showContent('tabla-de-notas')">Tabla de notas</li>
+                <li onclick="showContent('imagenes')">Imagenes</li>
+                <li onclick="showContent('video')">Video</li>
+                <li onclick="showContent('juego')">Juego</li>
+                <li onclick="showContent('manual-tecnico')">Manual Tecnico</li>
+            </ul>
+        </div>
+        
+        <!-- Área de contenido -->
+        <div class="content">
+            <!-- Contenido de Inicio -->
+            <div id="inicio" class="content-section active">
+                <h2>Buen dia bienvenido</h2>
+                <p>Esta es la página de inicio de mi sitio web. Selecciona una opción del menú para ver más contenido.</p>
+                <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\bienvenido.jpg" alt="Imagen de bienvenida" style="max-width: 100%; height: auto; margin-top: 20px; border-radius: 5px;">
+            </div>
+              
+            <!-- Contenido de mi CV -->
+            <div id="hoja-de-vida" class="content-section">
+                <h2>Acerca de mi</h2>
+                <div class="document">
+                    <h3>Ashlyn Liseth Lopez Martinez</h3>
+                    <h3>Perfil</h3>
+                    <p><strong>Cuento con fortalezas principales como la adaptabilidad, habilidades de comunicación, puntualidad, responsabilidad, deseos de superación, creatividad y constante compromiso de actualizar mis conocimientos en tecnología y sobre todo con gratitud, dispuesta a realizar distintas tareas de forma ética e incluso bajo presión. </strong></p>
+                    <h3>contacto</h3>
+                    <p><strong>Telefono:</strong> 4529-3685</p>
+                    <p><strong>Fecha:</strong> 12/08/2005</p>
+                    <p><strong>Correo:</strong> martinez.ashlyn2005@gmail.com</p>
+                    <p><strong>Direccion:</strong> Aldea Chapas, Nueva Santa Rosa, Santa Rosa</p>
+                    <h3>Experiencia Laboral</h3>
+                    <p><strong>2024-Presente:</strong> Docente en tecnologia a nivel primario, basico y diversificado</p>
+                    <h3>Estudios Realizados</h3>
+                    <p><strong>2022-2023 Nivel Diversificado:</strong> Bachiller en computación con orientación en ciencias y letras con diplomado en robotica, Liceo Guillermo Jageneau</p>
+                    <p><strong>2019-2021 Nivel Basico:</strong> Centro Educativo Nuestra Señora de la Esperanza, CENSE</p>
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li>Fallas y soluciones de impresoras</li>
+                        <li>Introducción a Python, sololearn</li>
+                        <li>Python Intermedio, sololearn</li>
+                    </ul>
+                    <h3>Referencias Personales </h3>
+                    <p><strong>Oscar Danilo Alegria Arriaga:</strong> Tels. 3398-8903</p>
+                    <p><strong>Carla Lourdes Quevedo Lemus:</strong> Tels. 3091-9900</p>
+                </div>
+            </div>
+            
+            <!-- Contenido de Tabla de Notas -->
+            <div id="tabla-de-notas" class="content-section">
+                <h2>Notas del Primer semestre de Ingenieria en Sistema</h2>
+                <p>En la siguiente tabla se muestran las notas de el Parcial 1 y Parcial 2</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parcial</th>
+                            <th>Contabilidad 1</th>
+                            <th>Metologia de la investigacion</th>
+                            <th>Desarrollo humano y profesional</th>
+                            <th>Introduccion a los Sistema de computo</th>
+                            <th>Logica de sistemas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>parcial I</td>
+                            <td>13</td>
+                            <td>11</td>
+                            <td>10</td>
+                            <td>8</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Parcial II</td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td>11</td>
+                            <td>8</td>
+                            <td>7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Contenido de Galería de Imágenes -->
+            <div id="imagenes" class="content-section">
+                <h2>Galería de Imágenes</h2>
+                <p>Bienvenido a mi colección de imágenes favoritas sobre las peliculas que me gustan.</p>
+                <div class="gallery">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\ali1.jpg" alt="Imagen 1">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\ali2.jpg" alt="Imagen 2">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\ali3.jpg" alt="Imagen 3">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\p1.jpg" alt="Imagen 4">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\p3.jpg" alt="Imagen 5">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\p2 .jpg" alt="Imagen 6">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\mis1.jpg" alt="Imagen 7">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\mis2.jpg" alt="Imagen 8">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\mis3.jpg" alt="Imagen 9">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\mis4.jpg" alt="Imagen 10">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\c1.jpg" alt="Imagen 11">
+                    <img src="C:\Users\marti\OneDrive\Desktop\pagina w\imagenes\c2.jpg" alt="Imagen 12">
+                </div>
+            </div>
+            
+            <!-- Contenido de Video -->
+            <div id="video" class="content-section">
+                <h2>Video de YouTube</h2>
+                <p>Este fue el primer video que veo de talkin ted y desde entonces aprendo mucho sobre las charlas de distintas personas </p>
+                <div class="video-container">
+                <iframe width="560" height="315" src="https://youtu.be/g6zBmBUOMhY?feature=shared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/g6zBmBUOMhY?si=hoboYRphpSLEGu8_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <!-- Contenido de Juego -->
+            <div id="juego" class="content-section">
+                <h2>Diviertete</h2>
+                <p>Al juego le puedes colocar tu nombre.</p>
+            <iframe width="100%" height="100%" frameborder="0" src="https://www.fandejuegos.com/game.php?id_juego=19893&id_dominio=1&code=6vdvvd97eee8v2evvv41vv19evc4e697" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+            <!-- Contenido de Manual Técnico -->
+            <div id="manual-tecnico" class="content-section">
+                <h2>Manual Técnico</h2>
+                <div class="document">
+                    <h3>Creacion de la pagina web</h3>
+                    <p><strong>Paso 1</strong> Crear una carpeta donde puedas almacenar toda la info de tu pagina, imagenes y la hoja de codigo con extension .HTML </p>
+                    <p><strong>Paso 2</strong> colocar la carpeta dentro de visual studios para agregar las imagenes o demas con mayor facilidad </p>
+                    
+                    <h4>estructura:</h4>
+                    <p>describire un copo sobre como se realiza un sitio web </p>
+                    
+                    <h4>Dentro de la carpeta</h4>
+                    <ul>
+                        <li>Realizar otra segunda carpeta dende pueda almacensar las imagenes </li>
+                        <li>Crear archivo de texto y cambiar la extencion de .TXT a .html</li>
+                        <li>Se abre el archivo con visual Estudios</li>
+                        <li> Inicias Codigo </li>
+                    </ul>
+                    
+                    <h4>Estructura </h4>
+                    <p><strong>seccion 1:</strong> se coloco la separacion de marcos, se eligieron colores para el codigo y tipografia </p>
+                    <p><strong>seccion 2:</strong> Utilizamos el div para contener texto en el menu, colocamos ul y li /li para la lista del menu e igual para el lado del contenido.</p>
+                    <p><strong>seccion 3:</strong> Realizamos la tabla de notas, con p y /p para contenido, table y th para el contenido de las clases y td para las notas .</p>
+                    <p><strong>seccion 4:</strong> Para agregar el video de youtube, vas a youtube, busca el video que desee colocar, click en compartir y click en la opcion de insertar y te realiza el codigo que debes incluir dentro del codigo de tu pagina para que se reproduzca.</p>
+                    
+                    <h4>Video Juego </h4>
+                    <p>Entras a una pagina llamada fandejuegos</p>
+                    <ol>
+                        <li>buscas el que te agrade</li>
+                        <li>le das compartir a la web </li>
+                        <li>copias el codigo y ruta que te da y lo agregas al codigo de tu pagina</li>
+                    </ol> 
+                    
+                </div>
+            </div>            
+        </div>
+    </div>  
+    <script>
+        function showContent(sectionId) {
+            // Ocultar todas las secciones de contenido
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Actualizar el menú activo
+            const menuItems = document.querySelectorAll('.menu li');
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Lógica del juego sencillo
+        document.addEventListener('DOMContentLoaded', function() {
+            const character = document.getElementById('character');
+            const block = document.getElementById('block');
+            const scoreDisplay = document.getElementById('score');
+            let score = 0;
+            let isJumping = false;
+            let gameInterval;
+            let isGameRunning = false;
+            
+            function startGame() {
+                if (isGameRunning) return;
+                
+                isGameRunning = true;
+                score = 0;
+                scoreDisplay.textContent = `Puntuación: ${score}`;
+                block.style.left = '300px';
+                
+                gameInterval = setInterval(function() {
+                    // Mover el bloque
+                    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
+                    if (blockLeft < -50) {
+                        blockLeft = 300;
+                        score++;
+                        scoreDisplay.textContent = `Puntuación: ${score}`;
+                    }
+                    block.style.left = (blockLeft - 5) + 'px';
+                    
+                    // Detectar colisión
+                    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+                    if (blockLeft < 100 && blockLeft > 0 && characterTop >= 100) {
+                        alert('¡Game Over! Puntuación: ' + score);
+                        clearInterval(gameInterval);
+                        isGameRunning = false;
+                    }
+                }, 20);
+            }
+            
+            function jump() {
+                if (isJumping || !isGameRunning) return;
+                
+                isJumping = true;
+                let jumpCount = 0;
+                let jumpUp = setInterval(function() {
+                    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+                    if (characterTop > 30 && jumpCount < 15) {
+                        character.style.top = (characterTop - 5) + 'px';
+                        jumpCount++;
+                    } else {
+                        clearInterval(jumpUp);
+                        let jumpDown = setInterval(function() {
+                            if (characterTop < 100 && jumpCount > 0) {
+                                character.style.top = (characterTop + 5) + 'px';
+                                characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+                            } else {
+                                clearInterval(jumpDown);
+                                isJumping = false;
+                            }
+                        }, 20);
+                    }
+                }, 20);
+            }
+            
+            document.addEventListener('keydown', function(event) {
+                if (event.code === 'Space') {
+                    if (!isGameRunning) {
+                        startGame();
+                    }
+                    jump();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
